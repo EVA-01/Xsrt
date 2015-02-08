@@ -16,7 +16,8 @@ for image in images
 	else
 		base = File.basename(image, '.png')
 	end
-	# Use system because I want to, idc
-	system "pxlsrt smart ./originals/#{base}.png ./sorted/#{base}.1.png -V -m alpha -r -d -t 200"
-	system "pxlsrt smart ./sorted/#{base}.1.png ./sorted/#{base}.2.png -V -m alpha -r -d -v -t 200"
+	# system "pxlsrt smart ./originals/#{base}.png ./sorted/#{base}.1.png -V -m alpha -r -d -t 200"
+	Pxlsrt::Smart.suite("./originals/#{base}.png", "./sorted/#{base}.1.png", :verbose => true, :method => "alpha", :diagonal => true, :reverse => true, :threshold => 200)
+	# system "pxlsrt smart ./sorted/#{base}.1.png ./sorted/#{base}.2.png -V -m alpha -r -d -v -t 200"
+	Pxlsrt::Smart.suite("./sorted/#{base}.1.png", "./sorted/#{base}.2.png", :verbose => true, :method => "alpha", :diagonal => true, :vertical => true, :reverse => true, :threshold => 200)
 end

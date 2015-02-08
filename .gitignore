@@ -2,3 +2,5 @@ sorted/*
 originals/*
 *.png
 *.jpg
+.*
+!.gitignore
