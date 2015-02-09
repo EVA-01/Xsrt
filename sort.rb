@@ -17,7 +17,7 @@ for image in images
 		system "convert ./originals/#{image} ./originals/#{base}.png"
 	end
 	# system "pxlsrt smart ./originals/#{base}.png ./sorted/#{base}.1.png -V -m alpha -r -d -t 200"
-	Pxlsrt::Smart.suite("./originals/#{base}.png", "./sorted/#{base}.1.png", :verbose => true, :method => "alpha", :diagonal => true, :reverse => true, :threshold => 200)
+	Pxlsrt::Smart.suite("./originals/#{base}.png", "./sorted/#{base}.1.png", :verbose => true, :method => "none", :diagonal => true, :reverse => true, :threshold => 200)
 	# system "pxlsrt smart ./sorted/#{base}.1.png ./sorted/#{base}.2.png -V -m alpha -r -d -v -t 200"
-	Pxlsrt::Smart.suite("./sorted/#{base}.1.png", "./sorted/#{base}.2.png", :verbose => true, :method => "alpha", :diagonal => true, :vertical => true, :reverse => true, :threshold => 200)
+	Pxlsrt::Smart.suite("./sorted/#{base}.1.png", "./sorted/#{base}.2.png", :verbose => true, :method => "none", :diagonal => true, :vertical => true, :reverse => true, :threshold => 200)
 end
